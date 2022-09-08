@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { CodeAction, CodeActionKind, workspace } from 'vscode';
+import { CodeAction, CodeActionKind, commands, workspace } from 'vscode';
 
 export function activate(context: vscode.ExtensionContext) {
   const updateTag = new CodeAction(
@@ -24,7 +24,7 @@ export function activate(context: vscode.ExtensionContext) {
     `Emmet: Wrap tag`,
     CodeActionKind.RefactorRewrite,
   );
-  removeTag.command = {
+  wrapTag.command = {
     title: 'Emmet: Wrap tag',
     command: 'editor.emmet.action.wrapWithAbbreviation',
   };
